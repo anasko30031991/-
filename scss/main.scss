@@ -1,0 +1,101 @@
+
+  
+  
+  @media screen and (max-width: 1280px) {
+  
+    .heder-inner{
+    width:20%;
+    display:flex;
+    flex-direction: column;
+    height:auto;
+    font-size:22px;
+    margin-right:50px;
+    }
+  }
+  /* baza */
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+  .ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  .a {
+    display: inline-block;
+  }
+  .address-link {
+    font-style: normal;
+  }
+  .container {
+    width: 100%;
+    max-width: 1288px;
+    padding: 24px 0;
+    margin: 0 auto;
+  }
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 12px; 
+    }
+  }
+/* ---- 1. Utils ---- */
+@import './utils/variables';
+@import './utils/mixins';
+@import './utils/fonts';
+@import './utils/texts';
+
+/* ---- 2. Base ---- */
+@import './baza';
+
+/* ---- 3. Components ---- */
+@import './componenst/buttons';
+@import './componenst/carousel';
+@import './componenst/chef-card';
+@import './componenst/formart-card';
+@import './componenst/form-terms';
+@import './componenst/input';
+@import './componenst/links';
+@import './componenst/pagination';
+
+/* ---- 4. Layouts ---- */
+@import './layouts/advanlages-section';
+@import './layouts/chefs-section';
+@import './layouts/contact-section';
+@import './layouts/footer';
+@import './layouts/formats-section';
+@import './layouts/header';
+@import './layouts/hero-section';
+@import './layouts/mobile-menu';
+@import './layouts/modal';
+@import './layouts/section';
+@import './layouts/traditions-section';
+
+/* ---- 5. Mixins usage (після імпорту!) ---- */
+.circle {
+  @include circle(100px, 100px, white);
+}
+.circle-big {
+  @include circle(200px, 200px, green);
+}
+
+  .checkbox { 
+    position: relative;
+  }
+  .checkbox-input { 
+    appearance: none;
+  } 
+  .checkbox-input:checked + .checkbox-label {
+    color: green;
+  }
+  .checkbox-label::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 5px;
+    border-color: var(--color-primary-dark);
+    content: '';
+  }
